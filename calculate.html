@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Calculate</title>\
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="node_modules/bootstrap-icons/font/bootstrap-icons.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row justify-content-between">
+            <div class="col-4">
+            <label for="a" class="form-label">first Number</label>
+            <input type="number" id="a" class="form-control">
+            </div>
+            <div class="col-4">
+                <label for="b" class="form-label">Second Number</label>
+                <input type="number" id="b" class="form-control">
+            </div>
+
+
+        </div>
+        <button class="btn btn-primary my-4">ADD</button>
+
+        <h3 class="my-5">Answer ==> <span id="answer"></span></h3>
+    </div>
+
+
+<script>
+    const A=document.getElementById('a')
+    const B=document.getElementById('b')
+    const btn=document.querySelector('button')
+    const answer=document.getElementById('answer');
+
+    btn.onclick=function () {
+        answer.innerText= A.valueAsNumber * B.valueAsNumber;
+
+    }
+
+</script>
+</body>
+</html>

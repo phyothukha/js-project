@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Combo&family=Oswald&family=Qwitcher+Grypen&display=swap');
+
+        .box{
+            height: 200px;
+        }
+        /*.fnt{*/
+        /*    font-family: 'Combo', cursive;*/
+        /*    font-family: 'Oswald', sans-serif;*/
+        /*    font-family: 'Qwitcher Grypen', cursive;*/
+        /*}*/
+    </style>
+
+</head>
+<body>
+<div class="p-3 border border-primary border-3 m-3 rounded-4 box">
+
+
+</div>
+
+<div class="row m-3">
+    <div class="col-12">
+        <input type="text" class="form-control text-input mb-3" placeholder="Say Something">
+
+    </div>
+    <div class="col">
+        <input type="color" class="form-control color-input h-100">
+    </div>
+    <div class="col">
+        <select class="font-input form-control">
+            <option value="Combo">Combo</option>
+            <option value="Oswald">Oswald</option>
+            <option value="Qwitcher Grypen">Qwitcher Grypen</option>
+        </select>
+    </div>
+    <div class="col">
+        <div class="input-group size-input ">
+
+            <button class="btn btn-primary">
+                <i class="bi bi-dash"></i>
+            </button>
+
+            <input type="number" class="text-end">
+            <button class="btn btn-primary">
+
+                <i class="bi bi-plus"></i>
+            </button>
+        </div>
+
+    </div>
+</div>
+<script>
+    let defaultFontSize=15;
+    //selector
+    let box=document.querySelector('.box');
+    let textInput=document.querySelector('.text-input');
+    let colorInput=document.querySelector('.color-input');
+    let fontInput=document.querySelector('.font-input');
+
+    let sizeInput=document.querySelector('.size-input');
+
+    //set value
+    sizeInput.children[1].valueAsNumber= defaultFontSize;
+
+
+    //controls
+    textInput.addEventListener('keyup',function (){
+
+        box.innerText=this.value
+    })
+
+    colorInput.addEventListener('change',function (){
+        box.style.color=colorInput.value;
+    })
+    fontInput.addEventListener('change',function (){
+        box.style.fontFamily=fontInput.value;
+    })
+
+
+    sizeInput.children[0].addEventListener('click',function (){
+        if (sizeInput.children[1].valueAsNumber>0){
+            sizeInput.children[1].valueAsNumber-=3;
+            box.style.fontSize=sizeInput.children[1].valueAsNumber+"px";
+        }
+
+    })
+    sizeInput.children[2].addEventListener('click',function (){
+        sizeInput.children[1].valueAsNumber+=3;
+        box.style.fontSize = sizeInput.children[1].valueAsNumber+"px";
+    })
+
+</script>
+
+</body>
+</html>

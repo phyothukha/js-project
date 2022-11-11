@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./node_modules/animate.css/animate.min.css">
+</head>
+<body>
+    <div class="p-3">
+        <h4>Lists Builder</h4>
+
+        <div class="mb-3" id="input-form">
+            <div class="input-group">
+                <input type="text" id="input" class="form-control" required>
+                <button class="btn btn-primary" id="send">
+                    <i class="bi bi-plus-circle"></i>
+                </button>
+            </div>
+        </div>
+        <ul class="list-group" id="list">
+<!--            <li class="list-group-item d-flex justify-content-between">-->
+<!--                <span>Apple</span>-->
+<!--                <button class="btn btn-sm btn-danger">-->
+<!--                    <i class="bi bi-trash-fill"></i>-->
+<!--                </button>-->
+<!--            </li>-->
+<!--            <li class="list-group-item d-flex justify-content-between">-->
+<!--                <span>Apple</span>-->
+<!--                <button class="btn btn-sm btn-danger">-->
+<!--                    <i class="bi bi-trash-fill"></i>-->
+<!--                </button>-->
+<!--            </li>-->
+<!--            <li class="list-group-item d-flex justify-content-between">-->
+<!--                <span>Apple</span>-->
+<!--                <button class="btn btn-sm btn-danger">-->
+<!--                    <i class="bi bi-trash-fill"></i>-->
+<!--                </button>-->
+<!--            </li>-->
+        </ul>
+    </div>
+<script>
+    let inputForm=document.getElementById('input-form');
+    let input=document.getElementById('input');
+    let send=document.getElementById('send');
+    let lists=document.getElementById('list');
+
+//first Way of event
+    send.addEventListener('click',function(e){
+        e.preventDefault();
+        // console.log(input.value);
+        // lists.innerHTML +=`
+        // <li class="list-group-item animate__animated animate__fadeInDown d-flex justify-content-between">
+        //         <span>${input.value}</span>
+        //         <button class="btn btn-sm btn-danger">
+        //             <i class="bi bi-trash-fill"></i>
+        //         </button>
+        //     </li>
+        // `;
+
+        let li=document.createElement('li');
+
+            li.classList.add('list-group-item','animate__animated','animate__fadeInDown','d-flex','justify-content-between')
+            li.innerHTML=`<span>${input.value}</span>
+                <button class="btn btn-sm btn-danger">
+                     <i class="bi bi-trash-fill"></i>
+                 </button>`;
+            // console.log(li);
+            lists.append(li);
+            input.value=null;
+            // inputForm.reset();
+
+
+    });
+    //အကယ်၍ form ဖြစ်နေခဲ့ ရင် ဒီ နည်းလမ်းကို သုံးပါ
+    // inputForm.addEventListener('submit',function (e){
+    //     let li=document.createElement('li');
+    //
+    //     li.classList.add('list-group-item','animate__animated','animate__fadeInDown','d-flex','justify-content-between')
+    //     li.innerHTML=`<span>${input.value}</span>
+    //             <button class="btn btn-sm btn-danger">
+    //                  <i class="bi bi-trash-fill"></i>
+    //              </button>`;
+    //     // console.log(li);
+    //     lists.append(li);
+    //     // input.value=null;
+    //     inputForm.reset();
+    // })
+
+    // input.addEventListener('keyup',function (e){
+    //     // console.log(e);
+    //     if(e.key==='Enter'){
+    //         console.log(input.value);
+    //         inputForm.reset();
+    //     }
+    // })
+
+</script>
+
+</body>
+</html>
