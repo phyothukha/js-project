@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Gallery</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="node_modules/animate.css/animate.min.css">
+    <style>
+        .result{
+            columns: 3 200px;
+            column-gap: 1.5rem;
+        }
+        #uploadedPhoto:active{
+            background-color: #595656;
+            transform: scale(1.02);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="my-3">
+                    <div class="border border-dark rounded-3 p-5 text-center" id="uploadedPhoto">
+                        <i class="bi bi-upload display-2"></i>
+                    </div>
+                    <input type="file" id="uploader" class="form-control d-none" multiple>
+
+                </div>
+                <div class="result g-5">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script src="js/gallery.js"></script>
+</body>
+</html>

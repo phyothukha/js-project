@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./node_modules/animate.css/animate.min.css">
+    <link rel="stylesheet" href='./node_modules/bootstrap-icons/font/bootstrap-icons.css'>
+
+</head>
+
+<style>
+    img{
+        height: 200px;
+    }
+    .cart{
+        font-size: 30px;
+        position: fixed;
+        right: 10px;
+    }
+
+</style>
+<body>
+<i class="bi bi-cart cart"></i>
+<div class="images">
+    <img src="./assets/poe.jpg" alt="" class="photo">
+</div>
+
+<button class="remove">Remove</button>
+<input type="number" class="count" value="1">
+<button class="add">ADD</button>
+
+
+
+
+<!--<div class="root">-->
+<!--    <h1>min ga lar par</h1>-->
+<!--    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias blanditiis culpa cum cupiditate eius et inventore ipsa necessitatibus nemo nesciunt nobis perferendis perspiciatis, praesentium, quaerat quas quasi reiciendis similique veniam!</p>-->
+<!--    <button>Click Me</button>-->
+<!--    <button>Search</button>-->
+<!--    <ul>-->
+<!--        <li>one</li>-->
+<!--        <li>two</li>-->
+<!--        <li>three</li>-->
+<!--        <li>four</li>-->
+<!--    </ul>-->
+
+
+<!--</div>-->
+
+<script>
+    let images=document.querySelector('.images');
+    let photo=document.querySelector('.photo');
+    let add=document.querySelector('.add');
+    let count=document.querySelector('.count');
+    let remove=document.querySelector('.remove');
+
+
+    add.addEventListener('click',_=>{
+        let newImg= new Image();
+        newImg.classList.add('animate__animated', 'animate__rotateInUpLeft')
+        newImg.style.marginLeft='-80px'
+        newImg.src=photo.src;
+        count.valueAsNumber+=1;
+        images.append(newImg);
+    })
+    remove.addEventListener('click',_=>{
+      if(count.valueAsNumber>1){
+          let lastImage= images.lastElementChild;
+          lastImage.classList.replace('animate__rotateInUpLeft','animate__rotateInUpRight')
+          lastImage.addEventListener('animationend',_=>{
+              lastImage.remove();
+          })
+          count.valueAsNumber-=1;
+      }
+    })
+
+
+
+
+
+    // let root=document.querySelector('.root');
+    // root.addEventListener('click',_=>console.log('i am root'))
+    // let ul=document.querySelector('ul')
+    // ul.addEventListener('click',_=>console.log('I am ul'))
+    //
+    //
+    // let btn=document.querySelectorAll('button')
+    // btn.forEach(btn=>btn.addEventListener('click',_=>console.log('I am button'+btn.innerText)));
+    //
+    // let lists=document.querySelectorAll('li')
+    // lists.forEach(li=>li.addEventListener('click',_=>console.log('I am li'+li.innerText)));
+    // ul.addEventListener('click',event=>console.log(event.target.innerText))
+    //
+    // function createLi(text='new list'){
+    //     let li=document.createElement('li')
+    //     li.innerText=text
+    //     ul.append(li)
+    // }
+
+</script>
+</body>
+</html>

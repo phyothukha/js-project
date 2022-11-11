@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./node_modules/bootstrap-icons/font/bootstrap-icons.css">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Combo&family=Oswald&family=Qwitcher+Grypen&display=swap');
+
+       /*font {font-family: 'Combo', cursive;*/
+       /* font-family: 'Oswald', sans-serif;*/
+       /* font-family: 'Qwitcher Grypen', cursive;}*/
+    </style>
+</head>
+<body>
+
+    <div class="p-5 m-5 border border-primary box" style="height: 300px ;font-size:30px;" >
+
+    </div>
+    <div class="row m-5">
+        <div class="col-12 mb-3">
+            <input type="text" class="form-control text-input" placeholder="Saysomething">
+        </div>
+        <div class="col">
+            <input type="color" class="form-control color-input h-100" >
+
+        </div>
+        <div class="col">
+            <select name="" id="" class="font-input p-3">
+                <option value="Combo">Combo</option>
+                <option value="Oswald">Oswald</option>
+                <option value="Qwitcher Grypen">Qwitcher Grypen</option>
+            </select>
+        </div>
+        <div class="col">
+            <div class="input-group size-input">
+                <button class="btn btn-dark">
+                    <i class="bi bi-dash"></i>
+                </button>
+                <input type="number" class="w-25">
+                <button class="btn btn-dark">
+                    <i class="bi bi-plus"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+
+<script>
+
+let defaultFontSize=15;
+
+    let box=document.querySelector('.box');
+    let textInput=document.querySelector('.text-input');
+    let colorInput=document.querySelector('.color-input');
+    let fontInput=document.querySelector('.font-input');
+    let sizeInput=document.querySelector('.size-input');
+
+    sizeInput.children[1].valueAsNumber=30;
+
+    window.addEventListener("load",function (){
+        box.innerText="min ga lar par";
+        box.style.fontFamily=fontInput.value;
+        box.style.fontSize=sizeInput.children[1].valueAsNumber;
+    })
+    textInput.addEventListener('keyup',function (){
+        box.innerText=textInput.value;
+    });
+    colorInput.addEventListener('change',function (){
+        box.style.color=colorInput.value;
+    });
+    fontInput.addEventListener('change',function (){
+        box.style.fontFamily=fontInput.value;
+    })
+    sizeInput.children[0].addEventListener('click',function(){
+        if(sizeInput.children[1].valueAsNumber>0){
+       sizeInput.children[1].valueAsNumber-=3
+        box.style.fontSize=sizeInput.children[1].valueAsNumber+'px';}
+    })
+    sizeInput.children[2].addEventListener('click',function(){
+        sizeInput.children[1].valueAsNumber+=3
+        box.style.fontSize=sizeInput.children[1].valueAsNumber+'px';
+    })
+
+
+</script>
+
+</body>
+</html>

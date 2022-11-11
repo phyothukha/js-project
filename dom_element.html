@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<!--<audio src="./assets/mmidol_4_song.mp3" controls></audio>-->
+
+<script>
+
+    let song= new Audio('./assets/mmidol_4_song.mp3');
+
+    song.addEventListener('pause',function (){
+        console.log('u pause');
+    })
+    song.addEventListener('ended',function (){
+        console.log('ended pause');
+    })
+
+
+    console.dir(song)
+    let h1=document.createElement('h1');
+    let img=document.createElement('img');
+
+
+    // img.src='https://media1.popsugar-assets.com/files/thumbor/MNk3t5Dn8ciTTeiuiuGpKwzM3I0/95x215:2752x2872/fit-in/500x500/filters:format_auto-!!-:strip_icc-!!-/2019/12/17/889/n/1922398/8c167c8b5df93898538365.01867179_/i/Elle-Fanning.jpg'
+    img.style.width="300px";
+    // let text=document.createTextNode('hello hello');
+    // h1.append(text);
+    // console.dir(h1);
+    h1.innerText='hello hello';
+    h1.style.color='blue';
+    h1.title='san kyi tar par';
+    h1.setAttribute('ptk','phyo thu kha')
+    h1.className='one two';
+    h1.classList.add('three');
+
+    // document.body.append(h1);
+    document.body.append(img);
+
+</script>
+</body>
+</html>

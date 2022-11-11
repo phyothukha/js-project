@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<h1 id="aa" title="h1 h1" ptk="Phyo thu Kha">Min Ga Lar Par</h1>
+<h1>Nay Kg Lr?</h1>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid esse iusto minus praesentium quam reprehenderit ullam? Alias est eveniet fugiat fugit id iste libero officiis, possimus quo sed suscipit vero.</p>
+
+<button id="bb">Click Me
+</button>
+<a href="https://google.com">GOOGLE</a>
+<ul >
+    <li>Apple</li>
+    <li>Orange</li>
+    <li>Lemon</li>
+    <li>lime</li>
+</ul>
+<script>
+    let underline=document.querySelector('ul');
+    underline.style.paddingLeft='0'
+    let lists=document.querySelectorAll('li');
+    lists.forEach(function (list){
+        console.log(list);
+        list.innerHTML='Banana';
+        list.style.listStyle='none';
+        list.style.backgroundColor='aqua';
+        list.style.color='grey';
+        list.style.padding='5px';
+        list.style.margin='5px';
+
+
+    })
+
+
+    // let h1=document.querySelectorAll('h1');
+    //
+    // h1.forEach(function (el,i){
+    //     console.log(el,i);
+    //     // el.innerText='Phyo Thu Kha';
+    //     el.title='PTK Vs HHW';
+    //     el.style.color='white';
+    //     el.style.backgroundColor='red';
+    //     el.style.padding='20px';
+    // })
+
+
+    //
+
+    // console.dir('h1');
+    // let answer=window.confirm('have u eaten dinner');
+    // window.alert(answer? "Yes": "No");
+
+    // let girlfriend=window.prompt('what is your lovely girlfrend?')
+    //
+    // window.alert(girlfriend)
+    // console.log(girlfriend)
+    // document.write(girlfriend)
+
+
+
+
+    let d= new Date();
+
+    d.setMonth(d.getMonth()+4);
+    d.setHours(d.getHours()+22);
+    console.log(d.toLocaleDateString());
+    console.log(d.getHours());
+    console.log(d.getMonth());
+    console.log(d.getFullYear());
+
+    // console.dir(d);
+    // console.log(d);
+    // let n1=window.prompt("first");
+    // let n2=window.prompt("second");
+    //
+    // // window.alert(Number(n1))
+    //
+    // console.log(parseInt(n2))
+
+</script>
+
+</body>
+</html>

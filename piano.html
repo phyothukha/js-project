@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Piano</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="node_modules/animate.css/animate.min.css">
+    <style>
+        .key{
+            height: 200px;
+            transition: 0.2s;
+        }
+        .key:active,.key.active{
+            opacity: 0.8;
+        }
+        .loader>div{
+            background-color: #ffffff85;
+        }
+
+    </style>
+</head>
+<body>
+
+
+    <div class="container">
+        <div class="row mt-5 g-1" id="keyboard">
+        </div>
+    </div>
+
+
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script src="js/piano.js"></script>
+
+</body>
+</html>

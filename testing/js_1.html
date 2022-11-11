@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<h1>Min Ga lar Par</h1>
+<h2 class="header">Hello World</h2>
+<p class="paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci enim in necessitatibus numquam sed ullam. Amet aut consectetur debitis dicta enim esse ex laborum perspiciatis provident qui quia repellendus, vero.</p>
+<script>
+    // let h1=document.getElementsByTagName('h1')
+    // let h2=document.querySelector('.header')
+    // let p=document.getElementsByClassName('paragraph');
+    //
+    // console.log(h1)
+    // console.log(h2)
+    // console.log(p)
+
+    let elem1, elem2;
+
+    // document.forms is an HTMLCollection
+
+    elem1 = document.forms[0];
+    elem2 = document.forms.item(0);
+
+    alert(elem1 === elem2); // shows: "true"
+
+    elem1 = document.forms.myForm;
+    elem2 = document.forms.namedItem("myForm");
+
+    alert(elem1 === elem2); // shows: "true"
+
+    elem1 = document.forms["named.item.with.periods"];
+
+</script>
+
+</body>
+</html>
